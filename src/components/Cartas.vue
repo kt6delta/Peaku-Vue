@@ -1,13 +1,9 @@
 <script>
-import Cartas from './components/Cartas.vue'
 export default {
-  name: 'App',
-  components: {
-    Cartas
-  },
+  name: 'Cartas',
+  props: ['Propmsg'],
   data() {
     return {
-      msg: "holi",
       jobs: [
         {
           name: "job 1",
@@ -24,10 +20,9 @@ export default {
 </script>
 
 <template>
-  <p>Lorem ipsum </p>
-  <Cartas :Propmsg="msg"></Cartas>
+  {{ Propmsg }}
+  <li v-for="(job, indice) in jobs" :key="indice"> {{ job }} </li>
+  
 </template>
 
-<style >
-
-</style>
+<style scoped></style>
