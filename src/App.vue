@@ -24,7 +24,6 @@ export default {
 </script>
 
 <template>
-  <p>Lorem ipsum </p>
   <Cartas :Propmsg="msg"></Cartas>
 </template>
 

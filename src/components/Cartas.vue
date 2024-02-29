@@ -34,16 +34,16 @@ export default {
 <template>
   {{ Propmsg }}
   <div class="card m-3" v-for="(job, indice) in jobs" :key="indice">
-    <div class="card-body d-flex">
-      <figure class="d-flex align-items-center" style="width: 100px; height: auto;">
+    <div id="cartas" class="card-body d-flex">
+      <figure class="d-flex align-items-center me-4" style="width: 70px; height: auto;">
         <img :src="job.img" class="img-fluid" alt="...">
       </figure>
-      <h5 class="card-title me-2">{{ job.name }}</h5>
       <div class="card-text">
         <div class="d-flex">
-          <p class="border me-2" v-for="(skill, index) in job.skills" :key="index">{{ skill }}</p>
+          <h5 class="card-title me-3">{{ job.name }}</h5>
+          <button type="button" class="me-1 btn btn-outline-secondary py-0 px-2 rounded-pill" v-for="(skill, index) in job.skills" :key="index">{{ skill }}</button>
         </div>
-        <div class="d-flex">
+        <div class="d-flex align-items-end pt-3">
           <p class="me-5"><img src="#" class="img-fluid" alt="...">{{ job.company }}</p>
           <p class="me-5"><img src="#" class="img-fluid" alt="...">{{ job.place }}</p>
           <p class="me-5"><img src="#" class="img-fluid" alt="...">{{ job.vacantes }}</p>
@@ -54,4 +54,18 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#cartas p{
+  font-size: 14.4px;
+  font-family: 'Montserrat','Roboto','sans-serif';
+  color: #212529;
+}
+#cartas button{
+  font-size: 0.8em;
+  color: #343a40!important;
+  height: 21px!important;
+}
+#cartas{
+  height: 102px;
+}
+</style>
