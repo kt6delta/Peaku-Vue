@@ -174,7 +174,7 @@ export default {
                     </g>
                   </svg>
                 </span>
-              <div v-if="job.salario"> {{ job.salario_3 }} </div>
+              <div v-if="job.salario"> {{ job.salario_1 | convertirADinero }} </div>
               <div v-else>Confidencial</div>
               </p>
 
@@ -223,6 +223,13 @@ export default {
                 {{ job.day }} days
               </p>
 
+              <p class="me-5 d-flex">
+                <span class="me-1 pb-2">
+                  <button disabled type="button" class="btn btn-outline-secondary py-0 px-2 rounded-pill">
+                    Ver más
+                  </button>
+                </span>
+              </p>
             </div>
           </div>
 
