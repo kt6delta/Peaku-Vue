@@ -88,16 +88,14 @@ export default {
     this.ver = this.jobs.map(() => false);
   },
 
-  filters: {
-    convertirADinero(value) {
-      return new Intl.NumberFormat("es-CO", { style: "currency", "currency": "COP", notation: "compact", compactDisplay: "short", }).format(value);
-    },
-  },
   methods: {
     verMas(indice) {
       this.ver[indice] = !this.ver[indice]
       this.jobs[indice].see_description = !this.jobs[indice].see_description
-    }
+    },
+    convertirADinero(value) {
+      return new Intl.NumberFormat("es-CO", { style: "currency", "currency": "COP", notation: "compact", compactDisplay: "short", }).format(value);
+    },
   },
 
 }
@@ -160,35 +158,16 @@ export default {
                 </span>
                 {{ job.tipo }}
               </p>
-
-              <!-- Opción 1 para poneer salario (funciona). -->
-              <p class="me-5 d-flex">
-                <span class="me-1 pb-2"><svg data-v-378c8849="" viewBox="0 0 16 16" width="1em" height="1em"
-                    focusable="false" role="img" aria-label="cash" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" class="bi-cash b-icon bi">
-                    <g data-v-378c8849="">
-                      <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
-                      <path
-                        d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z">
-                      </path>
-                    </g>
-                  </svg>
-                </span>
-              <div v-if="job.salario"> {{ job.salario_1 | convertirADinero }} </div>
-              <div v-else>Confidencial</div>
-              </p>
-
-              <!-- Opción 2 para poneer salario (no funciona). -->
-              <!--
+              
             <p class="me-5">
               <span class="me-1 pb-2"><svg data-v-378c8849="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="cash" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-cash b-icon bi"><g data-v-378c8849=""><path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path><path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"></path></g></svg>
               </span>
               <div v-if="job.salario">
-                {{job.salario_1 | convertirADinero}} - {{job.salario_2 | convertirADinero}} COP
+                {{convertirADinero(job.salario_1)}} - {{convertirADinero(job.salario_2)}} COP
               </div>
               <div v-else>Confidencial</div>
             </p>     
-            -->
+           
 
               <p class="me-5 d-flex">
                 <span class="me-1 pb-2"><svg data-v-378c8849="" viewBox="0 0 16 16" width="1em" height="1em"
