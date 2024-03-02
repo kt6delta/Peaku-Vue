@@ -81,13 +81,11 @@ export default {
           description: "Con 4 años de experiencia en la herramienta y capacidad de innovación."
         }
       ]
-
     }
   },
   onMounted() {
     this.ver = this.jobs.map(() => false);
   },
-
   methods: {
     verMas(indice) {
       this.ver[indice] = !this.ver[indice]
@@ -97,7 +95,6 @@ export default {
       return new Intl.NumberFormat("es-CO", { style: "currency", "currency": "COP", notation: "compact", compactDisplay: "short", }).format(value);
     },
   },
-
 }
 </script>
 
@@ -139,7 +136,7 @@ export default {
                         d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z">
                       </path>
                     </g>
-                  </svg>
+                    </svg>
                 </span>
                 {{ job.company }}
               </p>
@@ -154,7 +151,7 @@ export default {
                       </path>
                       <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
                     </g>
-                  </svg>
+                    </svg>
                 </span>
                 {{ job.tipo }}
               </p>
@@ -168,7 +165,6 @@ export default {
               <div v-else>Confidencial</div>
             </p>     
            
-
               <p class="me-5 d-flex">
                 <span class="me-1 pb-2"><svg data-v-378c8849="" viewBox="0 0 16 16" width="1em" height="1em"
                     focusable="false" role="img" aria-label="people" xmlns="http://www.w3.org/2000/svg"
@@ -178,11 +174,11 @@ export default {
                         d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z">
                       </path>
                     </g>
-                  </svg>
+                    </svg>
                 </span>
                 {{ job.vacantes }}
-              <div v-if="job.vacantes">&nbsp;&nbsp;Vacantes</div>
-              <div v-else>Vacante</div>
+                <div v-if="job.vacantes">&nbsp;&nbsp;Vacantes</div>
+                <div v-else>Vacante</div>
               </p>
 
               <p class="me-5 d-flex">
@@ -197,7 +193,7 @@ export default {
                         d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z">
                       </path>
                     </g>
-                  </svg>
+                    </svg>
                 </span>
                 {{ job.day }} days
               </p>
@@ -209,6 +205,7 @@ export default {
                   </button>
                 </span>
               </p>
+              
             </div>
           </div>
 
@@ -216,9 +213,9 @@ export default {
             <!-- Ver más. -->
             <p class="mt-2" v-if="job.see_description">{{ job.description }}</p>
           </div>
-
+          
         </div>
-
+        
       </div>
     </div>
   </div>
@@ -226,30 +223,30 @@ export default {
 </template>
 
 <style scoped>
-#cartas p {
-  font-size: 14.4px;
-  font-family: 'Montserrat', 'Roboto', 'sans-serif';
-  color: #212529;
-  font-weight: 500;
-}
-
-#card-title {
-  color: #343a40 !important;
-}
-
-#cartas button {
-  font-size: 0.8em;
-  color: #343a40 !important;
-  height: 21px !important;
-  width: 90px
-}
-
-#cartas {
-  height: 100px;
-}
-
-div#cartas:hover {
-  border: none !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+  #cartas p {
+    font-size: 14.4px;
+    font-family: 'Montserrat', 'Roboto', 'sans-serif';
+    color: #212529;
+    font-weight: 500;
+  }
+  
+  #card-title {
+    color: #343a40 !important;
+  }
+  
+  #cartas button {
+    font-size: 0.8em;
+    color: #343a40 !important;
+    height: 21px !important;
+    width: 90px
+  }
+  
+  #cartas {
+    height: 100px;
+  }
+  
+  div#cartas:hover {
+    border: none !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 </style>
